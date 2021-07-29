@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity() {
         Errorflag = false
         count = 0
         findViewById<TextView>(R.id.text).text = "0"
+        findViewById<TextView>(R.id.textleft).text = ""
     }
 
     //数字が動くメソッド
@@ -156,6 +157,7 @@ class MainActivity : AppCompatActivity() {
      fun Calculation(b: String) {
         //演算子の格納
          op = b
+        findViewById<TextView>(R.id.textleft).text = op
 
         //演算子が押された。
          flag = true
@@ -208,6 +210,8 @@ class MainActivity : AppCompatActivity() {
        Calculation(op)
         //イコールが押されているかの確認
         flagE = true
+        findViewById<TextView>(R.id.textleft).text=""
+
 
 
         //エラーが発生しているかの確認
@@ -229,6 +233,7 @@ class MainActivity : AppCompatActivity() {
             1 -> Redcolor()
             2 -> Greencolor()
             3 -> Bullcolor()
+            4 -> Brackcolor()
 
         }
 
@@ -401,8 +406,64 @@ class MainActivity : AppCompatActivity() {
             var q = findViewById<Button>(R.id.color)
             q.setBackgroundColor(Color.rgb(0, 0, 200))
 
-            colorcount = 0
+
         }
+
+    fun Brackcolor(){
+        var a = findViewById<Button>(R.id.bt0)
+        a.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var b = findViewById<Button>(R.id.bt1)
+        b.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var c = findViewById<Button>(R.id.bt2)
+        c.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var d = findViewById<Button>(R.id.bt3)
+        d.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var e = findViewById<Button>(R.id.bt4)
+        e.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var f = findViewById<Button>(R.id.bt5)
+        f.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var g = findViewById<Button>(R.id.bt6)
+        g.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var h = findViewById<Button>(R.id.bt7)
+        h.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var i = findViewById<Button>(R.id.bt8)
+        i.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var j = findViewById<Button>(R.id.bt9)
+        j.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var k = findViewById<Button>(R.id.op)
+        k.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var l = findViewById<Button>(R.id.op2)
+        l.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var n = findViewById<Button>(R.id.op3)
+        n.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var m = findViewById<Button>(R.id.op4)
+        m.setBackgroundColor(Color.rgb(0, 0, 0))
+
+
+        var o = findViewById<Button>(R.id.op5)
+        o.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var p = findViewById<Button>(R.id.close)
+        p.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        var q = findViewById<Button>(R.id.color)
+        q.setBackgroundColor(Color.rgb(0, 0, 0))
+
+        colorcount = 0
+    }
     }
 
 
