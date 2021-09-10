@@ -96,6 +96,19 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.textleft).text = ""
     }
 
+    public fun Close() {
+        op = ""
+        value2 = 0
+        value = 0
+        flag = false
+        flagE = false
+        Errorflag = false
+        count = 0
+        findViewById<TextView>(R.id.text).text = "$textvalue"
+        textvalue = ""
+        findViewById<TextView>(R.id.textleft).text = ""
+    }
+
     //数字が動くメソッド
      fun text(a: String) {
 
@@ -120,9 +133,9 @@ class MainActivity : AppCompatActivity() {
             textvalue= ""
             }
         }else {
-            textvalue += a
-        }
+                textvalue += a
 
+        }
 
         //追加した値が0であるか確認
         if (textvalue.equals("0")) {
@@ -145,8 +158,13 @@ class MainActivity : AppCompatActivity() {
 
 
         } else {
-            //
-            findViewById<TextView>(R.id.text).text = "$textvalue"
+            if (textvalue.length < 11) {
+                findViewById<TextView>(R.id.text).text = "$textvalue"
+            } else {
+                textvalue = "Overflow"
+                findViewById<TextView>(R.id.text).text = "$textvalue"
+                Close()
+            }
         }
 
 
@@ -212,17 +230,21 @@ class MainActivity : AppCompatActivity() {
         flagE = true
         findViewById<TextView>(R.id.textleft).text=""
 
-
-
         //エラーが発生しているかの確認
         if(!Errorflag) {
-            findViewById<TextView>(R.id.text).text = "$value"
+            textvalue = value.toString()
+            if(textvalue.length < 11) {
+                findViewById<TextView>(R.id.text).text = "$value"
+            }else{
+                textvalue = "Overflow"
+                findViewById<TextView>(R.id.text).text = "$textvalue"
+                Close()
+            }
         }else if(Errorflag){
            findViewById<TextView>(R.id.text).text = "$textvalue"
         }
 
     }
-
 
 
 
@@ -232,7 +254,7 @@ class MainActivity : AppCompatActivity() {
         when(colorcount){
             1 -> Redcolor()
             2 -> Greencolor()
-            3 -> Bullcolor()
+            3 -> Bluecolor()
             4 -> Brackcolor()
 
         }
@@ -353,7 +375,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //青
-    fun Bullcolor(){
+    fun Bluecolor(){
             var a = findViewById<Button>(R.id.bt0)
             a.setBackgroundColor(Color.rgb(0, 0, 200))
 
