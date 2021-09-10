@@ -166,8 +166,6 @@ class MainActivity : AppCompatActivity() {
                 Close()
             }
         }
-
-
     }
 
 
